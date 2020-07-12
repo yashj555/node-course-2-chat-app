@@ -22,11 +22,11 @@ io.on("connection",(socket)=>{
     //     "createdAt":"123"
     // });
 
-    socket.emit("newMessage",{
-        "from":"user1@gmail.com",
-        "text":"user1 entered to this room",
-        "createdAt":"253"
-    });
+    // socket.emit("newMessage",{
+    //     "from":"user1@gmail.com",
+    //     "text":"user1 entered to this room",
+    //     "createdAt":"253"
+    // });
 
     // socket.on("createEmail",(data)=>{
     //      console.log("create Email");
@@ -36,6 +36,11 @@ io.on("connection",(socket)=>{
     socket.on("createdMessage",(data)=>{
         console.log("create message");  
         console.log(data);
+        io.emit("newMessage",{
+         "from":data.from,
+         "text":data.text,
+         "createdAt": new Date().getTime()
+        })
     })
 
 

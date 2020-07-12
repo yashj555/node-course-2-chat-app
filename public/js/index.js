@@ -7,11 +7,10 @@ var socket = io();
     //       "text":"i found my angel"
     //   });
 
-      socket.emit("createdMessage",{
-          "from":"user1@gmail.com",
-          "text":"user 1 is entered the room"
-
-      })
+      // socket.emit("createdMessage",{
+      //     "from":"user1@gmail.com",
+      //     "text":"user 1 is entered the room"
+      // })
 
     })
 
