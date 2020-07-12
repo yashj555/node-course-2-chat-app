@@ -11,7 +11,6 @@ var socket = io();
       //     "from":"user1@gmail.com",
       //     "text":"user 1 is entered the room"
       // })
-
     })
 
     socket.on("disconnect",function(){
