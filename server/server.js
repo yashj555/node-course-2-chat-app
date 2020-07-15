@@ -32,10 +32,11 @@ io.on("connection",(socket)=>{
     //      console.log(data);
     // })
 
-    socket.on("createdMessage",(data)=>{
+    socket.on("createdMessage",(data,callback)=>{
         console.log("create message");  
         console.log(data);
         io.emit("newMessage",generateMessage(data.from,data.text)); 
+        callback("This is from the server");
     })
 
     socket.on("disconnect",()=>{
